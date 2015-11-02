@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ligatursatz für die deutsche Sprache</title>
+  <link rel="stylesheet" type="text/css" href="style.css"
+  />
+</head>
+
+<body>
+  <h1>Einführung</h1>
+  <div class="no-pagebreak">
+    <p>Einige Buchstaben&shy;kombinationen sind
+      eine Heraus&shy;forderung für die Gestaltung
+      von Schrift&shy;arten.
+      Ein gutes Beispiel ist die die f&#x2011;i&#x2011;Kombination.
+      Das kleine&nbsp;f ist oft aus&shy;ladend
+      gestaltet, und so ent&shy;steht eine unschöne
+      Lücke zwischen dem kleinen&nbsp;f und
+      dem kleinen&nbsp;i:
+    </p>
+    <p class="center">
+      <object data="Erfindung_without_ligature_without_context.svg"
+      type="image/svg+xml" class="singleLineGraphic">
+        <!-- Fallback raster image: -->
+        <object data="Erfindung_without_ligature_without_context.png"
+        type="image/png" class="singleLineGraphic">
+        </object>
+      </object>
+    </p>
+  </div>
+  <div class="no-pagebreak">
+    <p>Viele Schriftarten lösen dieses Problem durch
+      Ligaturen. Die Buch&shy;staben werden ver&shy;schmolzen;
+      so wird die Lücke ver&shy;mieden und
+      das Schrift&shy;bild wirkt harmonischer:
+    </p>
+    <p class="center">
+      <object data="Erfindung_with_ligature.svg"
+      type="image/svg+xml" class="singleLineGraphic">
+        <!-- Fallback raster image: -->
+        <object data="Erfindung_with_ligature.png"
+        type="image/png" class="singleLineGraphic">
+        </object>
+      </object>
+    </p>
+  </div>
+  <div class="no-pagebreak">
+    <p>Im Deutschen gibt es nun viele zusammen&shy;gesetzte
+      Wörter. Ligaturen über Morphem&shy;grenzen
+      hin&shy;weg erschweren aber das Lesen:
+    </p>
+    <p class="center">
+      <object data="Chefingenieur_with_fi_ligature.svg"
+      type="image/svg+xml" class="singleLineGraphic">
+        <!-- Fallback raster image: -->
+        <object data="Chefingenieur_with_fi_ligature.png"
+        type="image/png" class="singleLineGraphic">
+        </object>
+      </object>
+    </p>
+  </div>
+  <div class="no-pagebreak">
+    <p>Des&shy;halb werden bei deutschen Texten Ligaturen
+      zwar inner&shy;halb von Morphemen gesetzt, nicht
+      jedoch über Morphem&shy;grenzen hin&shy;weg:
+    </p>
+    <p class="center">
+      <object data="Chefingenieur_without_fi_ligature_with_context.svg"
+      type="image/svg+xml" class="singleLineGraphic">
+        <!-- Fallback raster image: -->
+        <object data="Chefingenieur_without_fi_ligature_with_context.png"
+        type="image/png" class="singleLineGraphic">
+        </object>
+      </object>
+    </p>
+  </div>
+  <h1>Technische Umsetzung</h1>
+  <p>Ligaturen werden überall dort gesetzt,
+    wo sie nicht durch einen Binde&shy;hemmer
+    (Unicode-Zeichen U+200C) unter&shy;drückt
+    werden.
+  </p>
+  <p>
+    Dieses kleine Programm arbeitet
+    sich Wort für Wort durch den Text. Dabei
+    werden nur Wörter berück&shy;sichtigt, die
+    in der Zeichen&shy;formatierung als deutsch
+    aus&shy;gezeichnet sind und mindestens drei
+    aufeinander&shy;folgende Buch&shy;staben
+    ent&shy;halten.
+    Für jedes dieser Wörter wird dann
+    ein Ligatur&shy;satz mittels Binde&shy;hemmer
+    vor&shy;geschlagen.
+  </p>
+  <p>
+    Dieses Programm arbeitet mit einem
+    Wörter&shy;buch, in dem für viele Wörter
+    der passende Ligatur&shy;satz hinter&shy;legt
+    ist. Bei Wörtern, die nicht im
+    Wörter&shy;buch ver&shy;zeichnet sind, ver&shy;sucht
+    das Programm, den passenden Ligatur&shy;satz
+    zu „erraten“.
+  </p>
+  <p>
+    Das Programm schlägt einen Binde&shy;hemmer
+    an allen Morphem&shy;grenzen vor, und zwar
+    unabhängig davon, ob die unter&shy;drückte
+    Ligatur gebräuchlich ist oder in der
+    dort verwendeten Schrift&shy;art überhaupt
+    vorkommt. Somit wird beim Wort
+    „Auflage“ die häufig anzutreffende
+    fl&#x2011;Ligatur durch einen
+    Binde&shy;hemmer unterdrückt. Aber auch
+    beim Wort „Aufgabe“ wird zwischen
+    f und&nbsp;g ein Binde&shy;hemmer gesetzt,
+    obwohl eine fg&#x2011;Ligatur nicht
+    gebräuchlich ist. Dieses Vor&shy;gehen
+    hat den Nach&shy;teil,
+    dass wohl viele Binde&shy;hemmer gesetzt
+    werden, die keinen Effekt haben, weil
+    die Schrift&shy;art diese Ligaturen überhaupt
+    nicht enthält. Dieses Vor&shy;gehen
+    hat aber den Vor&shy;teil, dass es im
+    Grund&shy;satz für alle Schrift&shy;arten
+    funktioniert – auch denn, wenn
+    Schmuck&shy;ligaturen ver&shy;wendet werden
+    oder die Schrift&shy;art
+    exotische Ligaturen ent&shy;hält.
+  </p>
+  <h1>Danksagung und Lizenzen</h1>
+  <p>Dieses Programm basiert auf Daten und
+    Programm&shy;code anderer Projekte. Ohne
+    diese Projekte wäre dieses Programm nicht
+    möglich. Ihnen gebürt deshalb besonderer
+    Dank.
+  </p>
+  <p>
+    Das
+    <a href="http://projekte.dante.de/Trennmuster/"
+    >Trennmuster</a>-Projekt
+    stellt eine sorg&shy;fältig erstellte
+    und recht umfassende Liste deutscher
+    Wörter mit Wort&shy;trennungen und Morphem&shy;grenzen
+    zur Ver&shy;fügung. Aus dieser Liste wird
+    das hier ver&shy;wendete Wörter&shy;buch
+    erzeugt. Außer&shy;dem werden aus dieser
+    Liste die Muster erzeugt, die für Wörter
+    benutzt werden, die nicht im Wörter&shy;buch
+    stehen. Die Wortliste steht unter der
+    MIT-Lizenz.
+  </p>
+  <p><a href="https://github.com/bramstein/hypher">Hypher</a> ist
+    Bram Steins JavaScript-Implementierung
+    von Frank Liangs Algorithmus zur Muster&shy;erkennung.
+    Dieser Programm&shy;code wird hier für Wörter
+    benutzt werden, die nicht im Wörter&shy;buch
+    stehen. Er steht unter der
+    BSD-Lizenz.
+  </p>
+  <p>Der <a href="http://unicode.org">Unicode</a>-Standard
+    beschreibt einen Algorithmus zur Zer&shy;legung
+    eines Textes in einzelne Wörter und stellt
+    die dazu nötigen Daten bereit. Dieser
+    Algorithmus wird hier ver&shy;wendet, um
+    den Text in einzelne Wörter zu
+    zer&shy;legen. Es gilt eine eigene
+    Unicode-Lizenz.
+  </p>
+  <p>Die Beispiele in diesem Hand&shy;buch sind
+    in der Schrift&shy;art <a
+    href="http://www.georgduffner.at/ebgaramond/index.html"
+    >EB&nbsp;Garamond</a>
+    von Georg Duffner gesetzt. Die mit viel Liebe zum
+    Detail gestaltete EB&nbsp;Garamond verfügt
+    nicht nur über Ligaturen, sondern auch über besondere
+    kontext&shy;bedingte Varianten für den Fall, dass Ligaturen
+    unter&shy;drückt werden. Wenn beispiels&shy;weise im Wort
+    „Chef&zwnj;ingenieur“ die fi&#x2011;Ligatur unter&shy;drückt
+    wird, dann ver&shy;wendet die EB&nbsp;Garamond nicht das
+    normale, aus&shy;ladende&nbsp;f, sondern eine Variante
+    mit kurzem Arm, die die Lücke vermeidet. Diese Schrift&shy;art
+    steht unter der Open Font License.
+  </p>
+  <p>Das Hand&shy;buch selbst ver&shy;wendet
+    die Schrift&shy;art
+    <a href="http://scripts.sil.org/charissilfont">Charis&nbsp;SIL</a>
+    von SIL&nbsp;International, die auch bei geringer Auflösung
+    (zum Beispiel am Bild&shy;schirm)
+    noch gut lesbar ist. Diese Schrift&shy;art
+    steht unter der Open Font License.
+  </p>
+  <p>Der übrige Programm&shy;code kann wahl&shy;weise
+    unter der MIT-Lizenz oder der CC0 ver&shy;wendet
+    werden.
+  </p>
+  <p>Sie können
+    die <a href="lizenzen.html">Lizenzen hier im Wortlaut</a> nachlesen.
+  </p>
+</body>
+
+</html>
