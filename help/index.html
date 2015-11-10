@@ -48,8 +48,7 @@
   </div>
   <div class="no-pagebreak">
     <p>Im Deutschen gibt es nun viele zusammen&shy;gesetzte
-      Wörter. Ligaturen über Morphem&shy;grenzen
-      hin&shy;weg erschweren aber das Lesen:
+      Wörter. Ligaturen erschweren hier aber das Lesen:
     </p>
     <p class="center">
       <object data="Chefingenieur_with_fi_ligature.svg"
@@ -62,9 +61,8 @@
     </p>
   </div>
   <div class="no-pagebreak">
-    <p>Des&shy;halb werden bei deutschen Texten Ligaturen
-      zwar inner&shy;halb von Morphemen gesetzt, nicht
-      jedoch über Morphem&shy;grenzen hin&shy;weg:
+    <p>Des&shy;halb wird bei deutschen Texten
+      <i>in solchen Fällen</i> keine Ligatur gesetzt:
     </p>
     <p class="center">
       <object data="Chefingenieur_without_fi_ligature_with_context.svg"
@@ -76,7 +74,7 @@
       </object>
     </p>
   </div>
-  <h1>Technische Umsetzung</h1>
+  <h1>Umsetzung</h1>
   <p>Ligaturen werden überall dort gesetzt,
     wo sie nicht durch einen Binde&shy;hemmer
     (Unicode-Zeichen U+200C) unter&shy;drückt
@@ -84,7 +82,7 @@
   </p>
   <p>
     Dieses kleine Programm arbeitet
-    sich Wort für Wort durch den Text. Dabei
+    sich nun Wort für Wort durch den Text. Dabei
     werden nur Wörter berück&shy;sichtigt, die
     in der Zeichen&shy;formatierung als deutsch
     aus&shy;gezeichnet sind und mindestens drei
@@ -194,6 +192,26 @@
   <p>Der übrige Programm&shy;code kann wahl&shy;weise
     unter der MIT-Lizenz oder der CC0 ver&shy;wendet
     werden.
+  </p>
+  <p>Bei der Programmierung wurden zur
+    Qualitäts&shy;sicherung Modul&shy;tests
+    erstellt. Diese Modul&shy;tests laufen
+    direkt in InDesign dank
+    <a href="http://debrouwere.github.io/Extendables/docs/#">Extendables</a>,
+    einer Bibliothek, die die Test&shy;umgebung
+    <a href="http://jasmine.github.io/">Jasmine</a>
+    für InDesign zur Ver&shy;fügung stellt.
+    Extendables und auch Jasmine stehen unter
+    der MIT-Lizenz, enthalten aber
+    Programm&shy;code von Dritt&shy;anbietern,
+    der unter anderen Lizenzen steht.
+  </p>
+  <p>Mico Loretan hat
+    mit <a href="https://www.ctan.org/pkg/selnolig">Selnolig</a> ein
+    hervor&shy;ragend dokumentiertes
+    Ligatursatz&shy;paket für Tex ent&shy;wickelt. Die Lektüre hat mir sehr
+    bei der Ent&shy;wicklung dieses Programms geholfen. Programm&shy;code
+    wurde nicht über&shy;nommen.
   </p>
   <p>Sie können
     die <a href="lizenzen.html">Lizenzen hier im Wortlaut</a> nachlesen.

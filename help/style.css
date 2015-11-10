@@ -43,7 +43,7 @@ body {
     /* Center the content and leave a margin at the left and at the right. */
     margin-left: auto;
     margin-right: auto;
-    font-family: internalFont, serif
+    font-family: internalFont, serif;
 }
 
 h1 {
@@ -61,9 +61,9 @@ h2 {
 }
 
 p, li {
-    /* Use a bigger line spacing than in print products, because it is always
-     * more difficult to read on the screen than to read on the paper, and
-     * more line spacing helps. */
+    /* Use a bigger line spacing than in typical print products, because it
+     * is always more difficult to read on the screen than to read on paper,
+     * and more line spacing helps. */
     line-height: 1.65em;
     page-break-inside: avoid;
 }
