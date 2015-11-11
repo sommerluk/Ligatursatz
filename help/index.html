@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Ligatursatz für die deutsche Sprache</title>
+  <title>Ligatur&shy;satz für die deutsche Sprache</title>
   <link rel="stylesheet" type="text/css" href="style.css"
   />
 </head>
 
 <body>
-  <h1>Einführung</h1>
+  <h1>Ein&shy;führung</h1>
   <div class="no-pagebreak">
     <p>Einige Buchstaben&shy;kombinationen sind
       eine Heraus&shy;forderung für die Gestaltung
@@ -74,7 +74,76 @@
       </object>
     </p>
   </div>
-  <h1>Umsetzung</h1>
+
+  <h1>Installation</h1>
+  <!--
+    English terminology:
+    Window > Utilities > Scripts
+    Window > Automation > Scripts
+    Scripts panel
+    Application and User folders
+    Reveal in Finder (Mac)
+    Reveal in Explorer (PC)
+  -->
+  <ol>
+    <li>
+      <p>
+        Laden Sie die
+        <a href="https://github.com/sommerluk/Ligatursatz">neuste
+        Version</a> herunter. Es handelt sich um
+        ein 7z&#x2011;Archiv.
+      </p>
+    </li>
+    <li>
+      <p>
+        Ent&shy;packen Sie das Archiv mit einem
+        <a href="http://www.7-zip.org">ge&shy;eigneten
+        Pack&shy;programm</a>. Es enthält einen Ordner
+        namens <i>Ligatursatz</i>, der etwa 100&nbsp;MB
+        Speicher&shy;platz belegt.
+      </p>
+    </li>
+    <li>
+      <p>
+        Starten Sie Indesign. Wenn die Skript&shy;palette
+        nicht sicht&shy;bar ist, dann wählen Sie im Menü
+        <i>Fenster&nbsp;→ Hilfsprogramme&nbsp;→ Skripte</i>
+        um sie anzuzeigen. (In älteren Indesign-Versionen:
+        <i>Fenster&nbsp;→ Automatisierung&nbsp;→ Skripte</i>)
+      </p>
+    </li>
+    <li>
+      <p>
+        In der Skript&shy;palette
+        wählen Sie den Register&shy;reiter <i>Skripte</i>.
+        Klicken Sie mit der rechten Maus&shy;taste auf den
+        Eintrag <i>Benutzer</i> (Installation nur für
+        das aktuelle Benutzer&shy;konto) oder alternativ auf
+        den Ein&shy;trag
+        <i>Anwendung</i> (Installation für alle
+        Benutzer&shy;konten, benötigt Administrator&shy;rechte).
+        Wählen Sie dann <i>Im Explorer anzeigen</i> (Windows)
+        beziehungs&shy;weise <i>Im Finder anzeigen</i> (Mac),
+        um den Ordner zu öffnen.
+      </p>
+    </li>
+    <li>
+      <p>
+        Verschieben Sie den Ordner <i>Ligatursatz</i> dorthin.
+      </p>
+    </li>
+    <li>
+      <p>
+        Beenden Sie Indesign und starten es erneut.
+      </p>
+    </li>
+  </ol>
+  <p>
+    Der Ligatur&shy;satz steht jetzt im Menü&shy;punkt <i>Bearbeiten</i>
+    zur Ver&shy;fügung.
+  </p>
+
+  <h1>Funktions&shy;weise</h1>
   <p>Ligaturen werden überall dort gesetzt,
     wo sie nicht durch einen Binde&shy;hemmer
     (Unicode-Zeichen U+200C) unter&shy;drückt
@@ -108,12 +177,12 @@
     Ligatur gebräuchlich ist oder in der
     dort verwendeten Schrift&shy;art überhaupt
     vorkommt. Somit wird beim Wort
-    „Auflage“ die häufig anzutreffende
-    fl&#x2011;Ligatur durch einen
+    <i>Auf&zwnj;lage</i> die häufig anzutreffende
+    f&#x2011;l&#x2011;Ligatur durch einen
     Binde&shy;hemmer unterdrückt. Aber auch
-    beim Wort „Aufgabe“ wird zwischen
+    beim Wort <i>Auf&zwnj;gabe</i> wird zwischen
     f und&nbsp;g ein Binde&shy;hemmer gesetzt,
-    obwohl eine fg&#x2011;Ligatur nicht
+    obwohl eine f&#x2011;g&#x2011;Ligatur nicht
     gebräuchlich ist. Dieses Vor&shy;gehen
     hat den Nach&shy;teil,
     dass wohl viele Binde&shy;hemmer gesetzt
@@ -122,16 +191,17 @@
     nicht enthält. Dieses Vor&shy;gehen
     hat aber den Vor&shy;teil, dass es im
     Grund&shy;satz für alle Schrift&shy;arten
-    funktioniert – auch denn, wenn
+    funktioniert&nbsp;– auch dann, wenn
     Schmuck&shy;ligaturen ver&shy;wendet werden
     oder die Schrift&shy;art
     exotische Ligaturen ent&shy;hält.
   </p>
-  <h1>Danksagung und Lizenzen</h1>
+
+  <h1>Dank&shy;sagung und Lizenzen</h1>
   <p>Dieses Programm basiert auf Daten und
     Programm&shy;code anderer Projekte. Ohne
     diese Projekte wäre dieses Programm nicht
-    möglich. Ihnen gebürt deshalb besonderer
+    möglich. Ihnen gebührt deshalb besonderer
     Dank.
   </p>
   <p>
@@ -175,8 +245,9 @@
     nicht nur über Ligaturen, sondern auch über besondere
     kontext&shy;bedingte Varianten für den Fall, dass Ligaturen
     unter&shy;drückt werden. Wenn beispiels&shy;weise im Wort
-    „Chef&zwnj;ingenieur“ die fi&#x2011;Ligatur unter&shy;drückt
-    wird, dann ver&shy;wendet die EB&nbsp;Garamond nicht das
+    <i>Chef&zwnj;ingenieur</i> die f&#x2011;i&#x2011;Ligatur
+    unter&shy;drückt wird, dann ver&shy;wendet
+    die EB&nbsp;Garamond nicht das
     normale, aus&shy;ladende&nbsp;f, sondern eine Variante
     mit kurzem Arm, die die Lücke vermeidet. Diese Schrift&shy;art
     steht unter der Open Font License.
