@@ -1,1 +1,1 @@
-# Ligatursatz 
+# Ligatursatz – ein Indesign-Skript
