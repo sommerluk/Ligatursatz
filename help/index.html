@@ -6,6 +6,16 @@
   <title>Ligatur&shy;satz für die deutsche Sprache</title>
   <link rel="stylesheet" type="text/css" href="style.css"
   />
+  <!-- The following line is a replacement for the following CSS code:
+         @viewport {
+             /* 100% of viewport’s width */
+             width: 100vw;
+             zoom: 1.0;
+         }
+	   But apparently Firefox does not support this (and that’s a shame),
+	   so we have to use this ugly meta element.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=5">
 </head>
 
 <body>
@@ -22,9 +32,16 @@
     </p>
     <p class="center">
       <object data="Erfindung_without_ligature_without_context.svg"
-      type="image/svg+xml" class="singleLineGraphic">
+      type="image/svg+xml" class="singleLineGraphic no-print">
         <!-- Fallback raster image: -->
         <object data="Erfindung_without_ligature_without_context.png"
+        type="image/png" class="singleLineGraphic">
+        </object>
+      </object>
+      <object data="Erfindung_without_ligature_without_context_black.svg"
+      type="image/svg+xml" class="singleLineGraphic only-print">
+        <!-- Fallback raster image: -->
+        <object data="Erfindung_without_ligature_without_context_black.png"
         type="image/png" class="singleLineGraphic">
         </object>
       </object>
@@ -38,9 +55,16 @@
     </p>
     <p class="center">
       <object data="Erfindung_with_ligature.svg"
-      type="image/svg+xml" class="singleLineGraphic">
+      type="image/svg+xml" class="singleLineGraphic no-print">
         <!-- Fallback raster image: -->
         <object data="Erfindung_with_ligature.png"
+        type="image/png" class="singleLineGraphic">
+        </object>
+      </object>
+      <object data="Erfindung_with_ligature_black.svg"
+      type="image/svg+xml" class="singleLineGraphic only-print">
+        <!-- Fallback raster image: -->
+        <object data="Erfindung_with_ligature_black.png"
         type="image/png" class="singleLineGraphic">
         </object>
       </object>
@@ -52,9 +76,16 @@
     </p>
     <p class="center">
       <object data="Chefingenieur_with_fi_ligature.svg"
-      type="image/svg+xml" class="singleLineGraphic">
+      type="image/svg+xml" class="singleLineGraphic no-print">
         <!-- Fallback raster image: -->
         <object data="Chefingenieur_with_fi_ligature.png"
+        type="image/png" class="singleLineGraphic">
+        </object>
+      </object>
+      <object data="Chefingenieur_with_fi_ligature_black.svg"
+      type="image/svg+xml" class="singleLineGraphic only-print">
+        <!-- Fallback raster image: -->
+        <object data="Chefingenieur_with_fi_ligature_black.png"
         type="image/png" class="singleLineGraphic">
         </object>
       </object>
@@ -66,9 +97,16 @@
     </p>
     <p class="center">
       <object data="Chefingenieur_without_fi_ligature_with_context.svg"
-      type="image/svg+xml" class="singleLineGraphic">
+      type="image/svg+xml" class="singleLineGraphic no-print">
         <!-- Fallback raster image: -->
         <object data="Chefingenieur_without_fi_ligature_with_context.png"
+        type="image/png" class="singleLineGraphic">
+        </object>
+      </object>
+      <object data="Chefingenieur_without_fi_ligature_with_context_black.svg"
+      type="image/svg+xml" class="singleLineGraphic only-print">
+        <!-- Fallback raster image: -->
+        <object data="Chefingenieur_without_fi_ligature_with_context_black.png"
         type="image/png" class="singleLineGraphic">
         </object>
       </object>
@@ -98,7 +136,7 @@
       <p>
         Ent&shy;packen Sie das Archiv mit einem
         <a href="http://www.7-zip.org">ge&shy;eigneten
-        Pack&shy;programm</a>. Es enthält einen Ordner
+        Pack&shy;programm</a>. Das Archiv ent&shy;hält einen Ordner
         namens <i>Ligatursatz</i>, der etwa 100&nbsp;MB
         Speicher&shy;platz belegt.
       </p>
@@ -186,8 +224,8 @@
     an allen Morphem&shy;grenzen vor, und zwar
     unabhängig davon, ob die unter&shy;drückte
     Ligatur gebräuchlich ist oder in der
-    dort verwendeten Schrift&shy;art überhaupt
-    vorkommt. Somit wird beim Wort
+    dort ver&shy;wendeten Schrift&shy;art überhaupt
+    vor&shy;kommt. Somit wird beim Wort
     <i>Auf&zwnj;lage</i> die häufig anzutreffende
     f&#x2011;l&#x2011;Ligatur durch einen
     Binde&shy;hemmer unterdrückt. Aber auch
