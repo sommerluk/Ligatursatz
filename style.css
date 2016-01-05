@@ -1,0 +1,233 @@
+/* We include all font styles of Charis SIL, because we use it as default
+ * font. As we rely on the default font formatting for heading (h1, h2…)
+ * it is likely that a bold variant is requested. Also an italic variant
+ * will be necessary because our content also contains italic parts. So
+ * it is best to include all font styles. */
+
+@font-face {
+    font-family: CharisSIL;
+    src: url("fonts/CharisSIL-5.000-web/web/CharisSIL-R.woff") format("woff");
+}
+
+@font-face {
+    font-family: CharisSIL;
+    src: url("fonts/CharisSIL-5.000-web/web/CharisSIL-I.woff") format("woff");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: CharisSIL;
+    src: url("fonts/CharisSIL-5.000-web/web/CharisSIL-B.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: CharisSIL;
+    src: url("fonts/CharisSIL-5.000-web/web/CharisSIL-BI.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* We include only the regular font style because we are sure that the other
+ * font styles won’t be used. */
+@font-face {
+    font-family: EBGaramond;
+    src: url("fonts/EBGaramond-0.016-web/EBGaramond12-Regular.woff") format("woff");
+}
+
+/* See https://drafts.csswg.org/css-device-adapt for details about @viewport */
+@viewport {
+    /* 100% of viewport’s width */
+    width: 100vw;
+    zoom: 1.0;
+}
+
+body {
+    /* To avoid problems with some older browsers, that do not calculate
+     * relative values correctly without this statement.
+     * It must be exactly 100%, because also the ECMAScript code for the
+     * font resizing expects this as initial value. */
+    font-size: 100%;
+    /* Use a bigger line spacing than in typical print products, because it
+     * is always more difficult to read on the screen than to read on paper,
+     * and more line spacing helps. */
+    line-height: 1.46em;
+    /* Use SHY hyphens in the HTML content, but do not make any other
+     * automatic hyphenation. */
+    hyphens: manual;
+    /* Center the content and leave a margin at the left and at the right. */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: CharisSIL, serif;
+    /* Enable typografic basic features (liga, clig, calt) */
+    -moz-font-feature-settings: "liga", "clig", "calt";
+    -webkit-font-feature-settings: "liga", "clig", "calt";
+    font-feature-settings: "liga", "clig", "calt";
+    font-variant-ligatures: contextual; /* Means hopefully liga, clig, calt */
+}
+
+@media print {
+    /* Use simple, 100% black text for print. Use it also for
+     * links (<a href...) and supress underlining for links.
+     */
+    body, a, .linkStyle {
+        color: #000000;
+        text-decoration: none;
+    }
+    body {
+        -webkit-column-width: 23em;
+        -webkit-column-gap: 4em;
+        -moz-column-width: 23em;
+        -moz-column-gap: 4em;
+        column-width: 23em;
+        column-gap: 4em;
+    }
+    .no-print {
+        display: none;
+    }
+}
+
+@media not print {
+    body {
+        /* Use a contrast, that is strong enough to recognize easily the
+         * letters, but not so strong to burn your eyes. Use neutral gray
+         * without any colour saturation. Do not use pure white for the
+         * background, but a slightly dimmed gray to avoid too strong light
+         * on monitors. */
+        background-color: #fcfcfc;
+        color: #282828;
+        /* Do not put too many words in a single line: */
+        width: 35em;
+        /* Avoid horizontal scrolling, and leave a small margin
+         * at the left and at the right. */
+        max-width: 90%;
+    }
+    .only-print {
+        display: none;
+    }
+    a, .linkStyle {
+        color: #282828;
+        cursor: pointer;
+        text-decoration: underline;
+        /* padding-bottom: 0em;
+        position: relative; */
+    }
+    /* The code for styled underlines does not work really
+    reliable. It requieres to set “display: inline-block;”
+    in the selector above (a, .linkStyle), and that would
+    make line breaks within links impossible. So we use
+    the traditional approach (though it looks not really nice).
+    a::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0;    
+        left: 0em;
+        bottom: 0.11em;
+        border-bottom: 0.073em solid; 
+    }
+    */
+    .zoomInCursor {
+        cursor: zoom-in;
+    }
+    .zoomOutCursor {
+        cursor: zoom-out;
+    }
+}
+
+h1, h2 {
+    font-size: 2.0em;
+    line-height: 1.2em;
+    margin-top: 1.4em;
+    margin-bottom: 0.0em;
+}
+
+h3 {
+    font-size: 1.3em;
+    line-height: 1.2em;
+    margin-top: 1.3em;
+    margin-bottom: 0.0em;
+}
+
+h4 {
+    font-size: 1.0em;
+    margin-top: 0.8em;
+    margin-bottom: 0.0em;
+}
+
+h1, h2, h3, h4 {
+    /* Provide page-break-after for browsers that do not support break-after. */
+    page-break-after: avoid;
+    break-after: avoid-column;
+    /* Provide page-break-inside for browsers that do not support break-after. */
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+    font-weight: bold;
+    font-variant: normal;
+    font-style: normal;
+}
+
+p, li {
+    page-break-inside: avoid;
+    /* Instead of “page-break-inside: avoid;” we could do this:
+    orphans: 3;
+    widows: 3;
+    However, it seems not to work in Firefox. Also in Edge, it does not
+    work reliable, but does some strange things. So it may be better to
+    not use it. Anyway, most <p> and <li> elements are not very long,
+    so it might even be a good idea to simply use “page-break-inside: avoid;”.
+    */
+}
+
+.singleLineGraphic {
+    height: 3.5em;
+}
+
+.singleLineGraphicReplacementText {
+    font-size: 3.5em;
+    font-family: EBGaramond, serif;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+}
+
+.noCalt {
+    font-feature-settings: "calt" off;
+}
+
+.center {
+    text-align: center;
+}
+
+/* The class “term” is used if a text wants to talk about a word itself instead of using
+ * a word to reference to something. Example:
+ * 1: This tree is big. – “tree” references to something: the tree.
+ * 2: The word “tree” has four letters. – “tree” does not reference to a tree, but to the WORD tree.
+ * 3: “Tree” has four letters. – “tree” does not reference to a tree, but to the WORD tree.
+ * Example 1 does not need any special typography. However, in example 2 and example 3, it’s better
+ * to use an italic font instead of using “”. This is the purpose of the class “term”. So,
+ * so class “term” has a different meaning than <em></em>.
+ */
+.term {
+    font-style: italic;
+}
+
+.allSmallCaps {
+    /** We could also use
+     *
+     * font-variant: small-caps;
+     * text-transform: lowercase;
+     *
+     * but a browser that does not know how to deal with small-caps would
+     * display only lowercase letters. So it’s saver to use all-small-caps,
+     * even if there is less brower support for this. */
+    font-variant: all-small-caps;
+}
+
+#textSizeTools {
+    display: none;
+}
+
+.no-pagebreak {
+    page-break-inside: avoid;
+}
